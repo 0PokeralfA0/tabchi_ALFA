@@ -13,7 +13,7 @@ http = require "socket.http"
 https = require "ssl.https"
 -----~~~~~~~~~~~~~~~~
 d = dofile('./libs/redis.lua')
-config_sudo = {987654321}
+config_sudo = {256576176}
 function dl_cb(arg, data)
  --vardump(data)
  --vardump(arg)
@@ -156,7 +156,7 @@ d:del("tallmsg")
 d:del("asgp")
 d:del("tgp")
 d:del("tusers")
-tabchi.sendText(msg.chat_id_, msg.id_,1,' ♻️آمار تبلیغ گر با موفقیت ریستارت شد ',1,'md')
+tabchi.sendText(msg.chat_id_, msg.id_,1,' ♻️آمار تبلیغ گر با موفقیت ریستارت شد \n @poker\_alfa ',1,'md')
         print("Tabchi [ Message ]")
 end
 
@@ -180,7 +180,7 @@ end
 if text == 'reload' and is_sudo(msg) then
  dofile('./bot/funcation.lua')
  dofile('./bot/api.lua')
-tabchi.sendText(msg.chat_id_,msg.id_,1,'*♻️ریلود با موفقیت انجام شد*',1,'md')
+tabchi.sendText(msg.chat_id_,msg.id_,1,'*♻️ریلود با موفقیت انجام شد \n @poker\_alfa*',1,'md')
 end
 if text == 'git pull' and is_sudo(msg) then
 text = io.popen("git pull"):read('*all')
@@ -191,7 +191,7 @@ local gps = d:scard("asgp") or 0
 local user = d:scard("ausers")
 local gp = d:scard("agp") or 0
 local allmsg = d:get("aallmsg") or 0
-local text = '📊آمار تبلیغ گر شما \n\n📩 `تمام پیام ها :` *'..allmsg..'*\n\n`👨‍👩‍👧‍👦 سوپرگروه ها  :`* '..gps..'*\n\n`👥 گروه ها  :` *'..gp..'*`\n\n🗣 پی وی ها : `*'..user..'*'
+local text = '📊آمار تبلیغ گر شما \n\n📩 `تمام پیام ها :` *'..allmsg..'*\n\n`👨‍👩‍👧‍👦 سوپرگروه ها  :`* '..gps..'*\n\n`👥 گروه ها  :` *'..gp..'*`\n\n🗣 پی وی ها : `*'..user..'* \n\n @poker\_alfa'
  tabchi.sendText(msg.chat_id_, msg.id_,1,text,1,'md')
  end
 if is_sudo(msg) then
@@ -203,7 +203,7 @@ if is_sudo(msg) then
         tabchi.sendText(v, 0, 1, text,1, 'md')
           end
    local gps = d:scard("asgp")     
-     local text = '📤`پیام شما برای` *'..gps..'* `سوپرگروه ارسال شد`'
+     local text = '📤`پیام شما برای` *'..gps..'* `سوپرگروه ارسال شد \n\n @poker\_alfa`'
        tabchi.sendText(msg.chat_id_, msg.id_, 1, text, 1, 'md')
           end
           tabchi.getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),cb)
@@ -217,7 +217,7 @@ if is_sudo(msg) then
         tabchi.sendText(v, 0, 1, text,1, 'md')
           end
 					local gp = d:scard("agp")     
-     local text = '📤`پیام شما برای` *'..gps..'* `گروه ارسال شد`*'
+     local text = '📤`پیام شما برای` *'..gps..'* `گروه ارسال شد \n\n @poker\_alfa`*'
        tabchi.sendText(msg.chat_id_, msg.id_, 1, text, 1, 'md')		
           end
           tabchi.getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),cb)
